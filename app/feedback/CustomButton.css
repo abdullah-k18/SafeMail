@@ -1,0 +1,77 @@
+:root {
+    --motion-ease: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    --motion-duration: 0.3s;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    align-items: center;
+    background: #f0f0f0;
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    font-size: clamp(14px, 4vw, 24px); 
+    justify-content: center;
+    margin: 0;
+    min-height: 100%;
+    padding: 1.5em;
+  }
+  
+  button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 500;
+    line-height: 2;
+    padding: 0.5em 1em;
+    position: relative;
+    transition: filter var(--motion-duration);
+    font-size: 14px;
+  }
+  
+  button:hover {
+    filter: brightness(1.1);
+  }
+  
+  button:active {
+    filter: brightness(0.9);
+  }
+  
+  button > span {
+    display: block;
+    position: relative;
+    transition: transform var(--motion-duration) var(--motion-ease);
+    z-index: 1;
+  }
+  
+  button:hover > span {
+    transform: scale(1.05);
+  }
+  
+  button:active > span {
+    transform: scale(0.95);
+  }
+  
+  button > svg {
+    fill: rgba(180, 168, 168, 0.623);
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+  }
+  
+  button > svg > path {
+    transition: var(--motion-duration) var(--motion-ease);
+  }
+  
+ 
